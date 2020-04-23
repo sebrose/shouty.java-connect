@@ -20,18 +20,17 @@ public class ShoutyServiceWrapper {
         }
     }
 
-//    public void shout(Shout shout) {
-//        HttpResponse response = Unirest.post(REST_URI + "/shouts")
-//                .body(shout)
-//                .asEmpty();
-//
-//        if (response.getStatus() != 201) {
-//            throw new RuntimeException("Unexpected return code from shouting: " + Integer.toString(response.getStatus()));
-//        }
-//    }
-//
-    public List<Shout> getShoutsHeardBy(String listener) {
+    public void shout(Shout shout) {
+        HttpResponse response = Unirest.post(REST_URI + "/shouts")
+                .body(shout)
+                .asEmpty();
 
+        if (response.getStatus() != 201) {
+            throw new RuntimeException("Unexpected return code from shouting: " + Integer.toString(response.getStatus()));
+        }
+    }
+
+    public List<Shout> getShoutsHeardBy(String listener) {
         HttpResponse<List<Shout>> response = Unirest.get(REST_URI + "/shouts/" + listener).asObject(new GenericType<List<Shout>>() {
         });
 

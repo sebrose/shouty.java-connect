@@ -27,6 +27,12 @@ public class ShoutSteps {
 
     @When("{word} shouts")
     public void person_shouts(String shouter) {
+        shouty.shout(new Shout(shouter, "Hello, world"));
+    }
+
+    @When("{word}'s shout originates from {int}, {int}")
+    public void sean_s_shout_originates_from(String shouter, Integer x, Integer y) {
+        shouty.shout(new Shout(shouter, "Hello, world", x, y));
     }
 
     @Then("{word} should hear {word}")
