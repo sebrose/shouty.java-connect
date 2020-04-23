@@ -30,7 +30,8 @@ public class ShoutSteps {
 
     @Then("{word} should hear {word}")
     public void listener_should_hear_shouter(String listener, String shouter) {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+        List<Shout> shouts = shouty.getShoutsHeardBy(listener);
+
+        assertEquals(shouter, shouts.get(0).person);
     }
 }

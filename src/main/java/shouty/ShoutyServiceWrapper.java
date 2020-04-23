@@ -30,17 +30,17 @@ public class ShoutyServiceWrapper {
 //        }
 //    }
 //
-//    public List<Shout> getShoutsHeardBy(String listener) {
-//
-//        HttpResponse<List<Shout>> response = Unirest.get(REST_URI + "/shouts/" + listener).asObject(new GenericType<List<Shout>>() {
-//        });
-//
-//        if (response.getStatus() != 200) {
-//            throw new RuntimeException("Unexpected return code retrieving shouts: " + Integer.toString(response.getStatus()));
-//        }
-//
-//        return response.getBody();
-//    }
+    public List<Shout> getShoutsHeardBy(String listener) {
+
+        HttpResponse<List<Shout>> response = Unirest.get(REST_URI + "/shouts/" + listener).asObject(new GenericType<List<Shout>>() {
+        });
+
+        if (response.getStatus() != 200) {
+            throw new RuntimeException("Unexpected return code retrieving shouts: " + Integer.toString(response.getStatus()));
+        }
+
+        return response.getBody();
+    }
 
 
 
