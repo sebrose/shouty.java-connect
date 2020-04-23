@@ -6,7 +6,7 @@ import java.util.List;
 
 public class ShoutyServiceWrapper {
 
-    private static final String majorMinorVersion = "1.0";
+    private static final String majorMinorVersion = "1.1";
     private static final String REST_ROOT_URI
             = "https://virtserver.swaggerhub.com/sbc6/Shout/";
 

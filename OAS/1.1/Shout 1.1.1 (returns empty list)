@@ -1,0 +1,85 @@
+openapi: 3.0.0
+servers:
+  - description: SwaggerHub API Auto Mocking
+    url: https://virtserver.swaggerhub.com/sbc6/Shout/1.1.1
+info:
+  description: Shout API - method to set a person's location
+  version: "1.1.1"
+  title: Shout App API - Set Location
+  contact:
+    email: emmanuel.paraskakis@smartbear.com
+  license:
+    name: Apache 2.0
+    url: 'http://www.apache.org/licenses/LICENSE-2.0.html'
+paths:
+  /people/{person}:
+    put:
+      summary: Set a person's location.
+      operationId: setLocation
+      description: |
+        Sets a person's location
+      parameters:
+        - in: path
+          name: person
+          description: person's name
+          required: true
+          schema:
+            type: string
+          example: Sean
+      responses:
+        '200':
+          description: location stored
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Person'
+        description: Submit a person's location
+  /shouts/{person}:
+    get:
+      summary: Retrieves shouts.
+      operationId: retrieveShouts
+      description: |
+        Retrieves a list of shouts
+      parameters:
+        - in: path
+          name: person
+          description: person's name
+          required: true
+          schema:
+            type: string
+          example: Lucy
+      responses:
+        '200':
+          description: list of Shouts
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Shout'
+                example: []
+components:
+  schemas:
+    Shout:
+      type: object
+      required:
+        - person
+        - message
+      properties:
+        person:
+          type: string
+          example: Sean
+        message:
+          type: string
+          example: Hello, World
+    Person:
+      type: object
+      required:
+        - x
+        - y
+      properties:
+        x:
+          type: integer
+        y:
+          type: integer
