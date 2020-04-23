@@ -7,12 +7,12 @@ Feature: Hear Shout
     Then Lucy should hear Sean
 
 
-#  Scenario: Out-of-range shout is not heard
-#    Given Sean is at 0, 0
-#    And Lucy is at 1200, 0
-#    When Sean shouts
-#    Then Lucy should not hear Sean
-#
+  Scenario: Out-of-range shout is not heard
+    Given Sean is at 0, 0
+    And Lucy is at 1200, 0
+    When Sean shouts
+    Then Lucy should not hear Sean
+
 #  Scenario: Business shout in-range based on origin
 #    Given Sean is at 99999, 99999
 #    And Lucy is at 900, 0

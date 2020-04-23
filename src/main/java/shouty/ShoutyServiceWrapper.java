@@ -10,16 +10,16 @@ public class ShoutyServiceWrapper {
     private static final String REST_ROOT_URI
             = "https://virtserver.swaggerhub.com/sbc6/Shout/";
 
-//    public void setLocation(String person, Location location) {
-//        HttpResponse response = Unirest.put(REST_URI + "/people/" + person)
-//                .body(location)
-//                .asEmpty();
-//
-//        if (response.getStatus() != 200) {
-//            throw new RuntimeException("Unexpected return code setting a person's location': " + Integer.toString(response.getStatus()));
-//        }
-//    }
-//
+    public void setLocation(String person, Location location) {
+        HttpResponse response = Unirest.put(REST_URI + "/people/" + person)
+                .body(location)
+                .asEmpty();
+
+        if (response.getStatus() != 200) {
+            throw new RuntimeException("Unexpected return code setting a person's location': " + Integer.toString(response.getStatus()));
+        }
+    }
+
 //    public void shout(Shout shout) {
 //        HttpResponse response = Unirest.post(REST_URI + "/shouts")
 //                .body(shout)
