@@ -20,4 +20,17 @@ public class ShoutSteps {
         shouty = shouty_;
     }
 
+    @Given("{word} is at {int}, {int}")
+    public void person_is_at(String person, Integer x, Integer y) {
+    }
+
+    @When("{word} shouts")
+    public void person_shouts(String shouter) {
+    }
+
+    @Then("{word} should hear {word}")
+    public void listener_should_hear_shouter(String listener, String shouter) {
+        // Write code here that turns the phrase above into concrete actions
+        throw new io.cucumber.java.PendingException();
+    }
 }
